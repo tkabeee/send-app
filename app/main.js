@@ -4,6 +4,7 @@
  */
 
 import React, { Component } from 'react'
+import { Share } from 'react-native'
 import {
   Container, Header, Content,
   Left, Right, Body,
@@ -16,6 +17,21 @@ export default class App extends Component {
     super()
     this.state = {
     }
+  }
+
+  contentShare() {
+    Share.share({
+      message: 'BAM: we\'re helping your business with awesome React Native apps',
+      url: 'http://bam.tech',
+      title: 'Wow, did you see that?'
+    }, {
+      // for Android
+      // dialogTitle: '',
+      // for iOS
+      excludedActivityTypes: [
+        'com.apple.UIKit.activity.PostToTwitter'
+      ]
+    })
   }
 
   render() {
@@ -34,7 +50,9 @@ export default class App extends Component {
         </Header>
         <Content>
           <List>
-            <ListItem>
+            <ListItem
+              onPress={() => this.contentShare()}
+            >
               <Text>sample text</Text>
             </ListItem>
           </List>
