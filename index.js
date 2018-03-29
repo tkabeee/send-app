@@ -1,4 +1,4 @@
 import { AppRegistry } from 'react-native'
-import App from './app/main'
+import App from './build/main.js'
 
 AppRegistry.registerComponent('sendapp', () => App)

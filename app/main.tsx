@@ -4,7 +4,9 @@
  */
 
 import React, { Component } from 'react'
-import { Share } from 'react-native'
+import {
+  Share
+} from 'react-native'
 import {
   Container, Header, Content,
   Left, Right, Body,
@@ -12,11 +14,15 @@ import {
   Title, Text, Button, Icon
 } from 'native-base'
 
-export default class App extends Component {
-  constructor () {
-    super()
-    this.state = {
-    }
+interface Props {
+}
+
+interface State {
+}
+
+export default class App extends Component<Props, State> {
+  constructor (props: any) {
+    super(props)
   }
 
   contentShare() {
